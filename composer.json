@@ -12,9 +12,8 @@
     "ext-mbstring"                 : "*",
     "symfony/dependency-injection" : "~2.5",
     "symfony/console"              : "~2.5",
-    "symfony/event-dispatcher"     : "~2.3",
-    "symfony/config"               : "~2.3",
-    "symfony/yaml"                 : "~2.3"
+    "symfony/config"               : "~2.5",
+    "symfony/yaml"                 : "~2.5"
   },
   "suggest": {
     "symfony/framework-bundle" : "To use this lib as a full Symfony Bundle"
