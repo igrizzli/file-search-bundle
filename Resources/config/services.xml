@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="vilks.file_search.default_engine" />
+        <parameter key="vilks.file_search.engines" type="collection" />
+    </parameters>
+    <services>
+        <service id="vilks.file_search.engine.php_read" class="Vilks\FileSearchBundle\Engine\PhpRead\PhpReadEngine">
+            <tag name="vilks.file_search.engine" engine="php_read" />
+        </service>
+
+        <service id="vilks.file_search.registry" class="Vilks\FileSearchBundle\Engine\EngineRegistry" />
+
+        <service id="vilks.file_search.engine" class="Vilks\FileSearchBundle\Engine\FileSearchEngineInterface">
+            <factory service="vilks.search_engine.registry" method="get" />
+        </service>
+
+        <service id="vilks.file_search.command" class="Vilks\FileSearchBundle\Command\FindFileCommand">
+            <argument>%vilks.file_search.default_engine%</argument>
+            <argument>%vilks.file_search.engines%</argument>
+            <tag name="console.command" />
+        </service>
+    </services>
+</container>

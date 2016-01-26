@@ -1,0 +1,33 @@
+{
+  "name": "vilks/file-search-bundle",
+  "description": "Allow to find files by content",
+  "keywords": ["symfony2", "file", "search"],
+  "type": "symfony-bundle",
+  "license": "GPL",
+  "authors": [{
+    "name" : "Vilks Yuriy"
+  }],
+  "require": {
+    "php"                          : ">=5.3.0",
+    "ext-mbstring"                 : "*",
+    "symfony/dependency-injection" : "~2.5",
+    "symfony/console"              : "~2.5",
+    "symfony/event-dispatcher"     : "~2.3",
+    "symfony/config"               : "~2.3",
+    "symfony/yaml"                 : "~2.3"
+  },
+  "suggest": {
+    "symfony/framework-bundle" : "To use this lib as a full Symfony Bundle"
+  },
+  "require-dev": {
+    "symfony/framework-bundle": "~2.5",
+    "symfony/browser-kit": "~2.5",
+    "symfony/debug"   : "~2.5",
+    "phpunit/phpunit" : ">=3.7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Vilks\\FileSearchBundle\\": ""
+    }
+  }
+}
